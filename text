@@ -1,0 +1,48 @@
+一.结构划分
+    从上到下
+    从左到右
+二.行高问题
+    eg:
+    body{
+        font-size:14px;
+        line-height: 1.5;
+    }
+    h3 {
+        font-size : 32px;
+    }
+    子级会继承父级元素中自己没有的元素，所以子级的行高计算方式为 1.5 * 32 = 48
+    body {
+        font-size:14px;
+        line-height:150%;
+    }
+    h3 {
+        font-size : 32px;
+    }
+    子级会继承父级元素，所以子级的行高计算方式为 150% * 14 = 21
+三. 
+    @规则
+        @charset    设置样式编码
+        @import     导入其他样式文件
+        @meida      媒体查询--移动端
+        @font-face  自定义字体
+四.盒模型
+    1.标准盒模型
+            总宽度 = border（左右） + width + padding (左右)
+            总高度 = border（上下） + height + padding(上下)
+    2.IE盒模型（怪异盒模型）
+            总宽度 = width;
+            总高度 = height;
+五.颜色渐变
+    background-image: linear-gradient(to right, #ff9000, #ff5000);
+    /* 兼容IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000', endColorstr='#ffff5000', GradientType=1);
+六.长度计算
+    注意运算符前后要有空格
+七.图片居中
+    方案一
+        display: table-cell;
+        vertical-align: middle;
+    方案二 弹性盒模型(IE10+)
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
